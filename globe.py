@@ -1,6 +1,8 @@
+""" Globe """
+
 import math
 
-RADIUS = 6371000
+_RADIUS = 6371000
 
 
 def distance(lat1, lon1, lat2, lon2):
@@ -22,7 +24,7 @@ def distance(lat1, lon1, lat2, lon2):
     n = (t1 ** 2 + (t2 - t3) ** 2) ** 0.5
     d = t4 + t5
 
-    return RADIUS * n / d
+    return _RADIUS * math.atan2(n, d)
     
 
 def latlon2sc(lat, lon):
@@ -30,10 +32,13 @@ def latlon2sc(lat, lon):
 
 
 def is_lat_valid(lat):
-    
-    return isinstance(lat, float) and -90.0 <= lat <= 90.0
+    return isinstance(lat, (float, int)) and -90.0 <= lat <= 90.0
 
 
 def is_lon_valid(lon):
-    return isinstance(lon, float) and -180.0 <= lon <= 180.0
+    return isinstance(lon, (float, int)) and -180.0 <= lon <= 180.0
         
+
+def teleport(latitude, longitude, distance):
+    return (latitude, longitude)  # STUB
+    
