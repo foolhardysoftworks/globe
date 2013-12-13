@@ -1,6 +1,7 @@
 """ Globe """
 
 import math
+import random
 
 _RADIUS = 6371000
 
@@ -39,6 +40,7 @@ def is_lon_valid(lon):
     return isinstance(lon, (float, int)) and -180.0 <= lon <= 180.0
         
 
-def teleport(latitude, longitude, distance):
+def teleport(latitude, longitude, distance=None, seed=None):
+    
     return (latitude, longitude)  # STUB
     
