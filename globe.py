@@ -31,6 +31,9 @@ def distance(lat1, lon1, lat2, lon2):
 def latlon2sc(lat, lon):
     return (math.pi * (-lat + 90.0) / 180.0, math.pi * lon / 180.0)
 
+def sc2latlon(t, p):
+    pass
+
 
 def is_lat_valid(lat):
     return isinstance(lat, (float, int)) and -90.0 <= lat <= 90.0
